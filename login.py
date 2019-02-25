@@ -1,4 +1,8 @@
-from infi.systray import SysTrayIcon
+# from infi.systray import SysTrayIcon
+from pystray import MenuItem as item
+import threading
+import pystray
+from PIL import Image
 import json
 import os
 import time
@@ -7,11 +11,14 @@ import urllib
 import sys
 from selenium import webdriver
 work_state = True
+icon = True
 
 
 def stop_working(systray):
     global work_state
+    global icon
     work_state = False
+    icon.stop()
 
 
 def login_now(usernamea, passworda):
@@ -32,11 +39,12 @@ def login_now(usernamea, passworda):
     driver.find_element_by_id("UserCheck_Login_Button").click()
     print("Logged In.")
     time.sleep(2)
-    driver.close()
+    driver.quit()
 
 
 def open_file(systray):
     os.system("config\cred.json")
+    return systray
 
 
 def check_filed():
@@ -66,10 +74,20 @@ def google_check():
         return False
 
 
-menu_options = (("Enter Credentials", None, open_file), ("Stop Assistant", None, stop_working),)
-systray = SysTrayIcon("icon.ico", "LNM Login Assistant", menu_options)
-systray.start()
+def icon_start(idk):
+    global icon
+    image = Image.open("icon.ico")
+    menu = (item('Enter Credentials', open_file, default=True), item('Stop Assistant', stop_working))
+    icon = pystray.Icon("LNM Login Assistant", image, "LNM Login Assistant", menu)
+    icon.run()
 
+
+# menu_options = (("Enter Credentials", None, open_file), ("Stop Assistant", None, stop_working),)
+# systray = SysTrayIcon("icon.ico", "LNM Login Assistant", menu_options)
+# systray.start()
+t1 = threading.Thread(target=icon_start, args=(10,))
+t1.start()
+print("Ahead\n")
 while work_state:
     config = json.loads(open('config/cred.json').read())
     print(config['username'] + "\n")
@@ -86,4 +104,5 @@ while work_state:
         time.sleep(1)
 
 if work_state is False:
-    systray.shutdown()
+    icon.stop()
+t1.join()
