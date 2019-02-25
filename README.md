@@ -1,4 +1,4 @@
-# LNM_Logger_v2 [![Latest Release](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/art-hack/LNM_Logger_v2/releases/latest)
+# LNM_Logger_v2 ![GitHub release](https://img.shields.io/github/release/art-hack/LNM_Logger_v2.svg)
 
 
 **LNM Login Assistant** is a assistant that helps you by automatically logging you back in automatically whenever you get logged out of the college internet.
@@ -7,7 +7,7 @@ When you install and run, assistant will start in the **task bar**, just **Enter
 
 Rest will be taken care by the Assistant itself.
 
-Find the lates release here : [![Latest Release](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/art-hack/LNM_Logger_v2/releases/latest)
+Find the lates release here : ![GitHub release](https://img.shields.io/github/release/art-hack/LNM_Logger_v2.svg)
 
 **Note: Assistant will only work after 60 sec of internet logout**
 
