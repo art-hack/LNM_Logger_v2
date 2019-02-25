@@ -6,6 +6,5 @@ When you install and run, assistant will start in the **task bar**, just **Enter
 
 Rest will be taken care by the Assistant itself.
 
-![Screenshot](https://i.imgur.com/pIwwCgP.png)
-
-![Screenshot](https://i.imgur.com/CZnUG4C.png)
+### Login Assistant Preview
+![Screenshot](https://i.imgur.com/pIwwCgP.png)    ![Screenshot](https://i.imgur.com/CZnUG4C.png)
