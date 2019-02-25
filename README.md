@@ -1,4 +1,4 @@
-# LNM_Logger_v2 ![GitHub release](https://img.shields.io/github/release/art-hack/LNM_Logger_v2.svg)
+# LNM_Logger_v2   ![GitHub All Releases](https://img.shields.io/github/downloads/art-hack/LNM_Logger_v2/total.svg)
 
 
 **LNM Login Assistant** is a assistant that helps you by automatically logging you back in automatically whenever you get logged out of the college internet.
