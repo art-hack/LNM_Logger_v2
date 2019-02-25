@@ -5,3 +5,7 @@
 When you install and run, assistant will start in the **task bar**, just **Enter credentials** by **Right-Clicking** on it.
 
 Rest will be taken care by the Assistant itself.
+
+![Screenshot](https://i.imgur.com/pIwwCgP.png)
+
+![Screenshot](https://i.imgur.com/CZnUG4C.png)
