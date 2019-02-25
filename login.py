@@ -6,10 +6,16 @@ import socket
 import urllib
 import sys
 from selenium import webdriver
+work_state = True
+
+
+def stop_working(systray):
+    global work_state
+    work_state = False
 
 
 def login_now(usernamea, passworda):
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(executable_path='webdriver\chromedriver.exe')
     try:
         driver.get("https://172.22.2.6/connect/PortalMain")
         driver.implicitly_wait(10)
@@ -60,15 +66,11 @@ def google_check():
         return False
 
 
-
-# if(check_filed()):
-#     menu_options = (("Enter Credentials", None, open_file),)
-# else:
-menu_options = (("Enter Credentials", None, open_file),)
+menu_options = (("Enter Credentials", None, open_file), ("Stop Assistant", None, stop_working),)
 systray = SysTrayIcon("icon.ico", "LNM Login Assistant", menu_options)
 systray.start()
 
-while True:
+while work_state:
     config = json.loads(open('config/cred.json').read())
     print(config['username'] + "\n")
     print(str(google_check()) + "\n")
@@ -82,3 +84,6 @@ while True:
         login_now(config['username'], config['password'])
     else:
         time.sleep(1)
+
+if work_state is False:
+    systray.shutdown()
